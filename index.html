@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio_admin.css">
+    <script src="https://kit.fontawesome.com/bdd53a2a6d.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <i class="fa-solid fa-house-chimney"></i>
+            <div>Home</div>
+            <i class="fa-solid fa-headphones"></i>
+            <div>Services</div>
+            <i class="fa-solid fa-flag"></i>
+            <div>Alerts</div>
+            <i class="fa-solid fa-chart-pie"></i>
+            <div>Stats</div>
+        </div>
+        <div class="header">
+            <div class="search-box">
+                <form>
+                    <input type="search" name="search" id="search" placeholder="Search">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <div class="alarms">
+                <div class="pc-menu">
+                    <div class="alarm-icon bell">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="alarm-notice">4</span>
+                    </div>
+                    <div class="alarm-icon mail">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="alarm-notice">3</span>
+                    </div>
+                    <div class="name">
+                        <a href="#">Onnoory Chung</a>
+                    </div>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Dashboard</h1>
+            <div class="fields">
+                <div class="card card_1">
+                    <div>
+                        <p>Earnings (Monthly)</p>
+                        <h2>$400,000</h2>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+                </div>
+                <div class="card card_2">
+                    <div>
+                        <p>Earnings (Annual)</p>
+                        <h2>$800,000</h2>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                </div>
+                <div class="card card_3">
+                    <div>
+                        <p>Tasks</p>
+                        <h2>13</h2>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                </div>
+                <div class="card card_4">
+                    <div>
+                        <p>Requests</p>
+                        <h2>26</h2>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-task">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Earnings Overview</h3>
+                    </div>
+                    <div class="chart">
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <canvas id="myChart"></canvas>
+                        <script>
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                    datasets: [{
+                                        label: 'Monthly',
+                                        data: [0, 10, 5, 3, 20, 30, 45],
+                                        backgroundColor: 'rgb(68, 68, 192)',
+                                        borderColor: 'rgb(68, 68, 192)',
+                                        borderWidth: 1,
+                                        fill: 'origin',
+                                        tension: '0.2'
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="tasks">
+                    <div class="task-header">
+                        <h3>Tasks</h3>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="col-1">Borrowed Items</td>
+                            <td class="col_2">
+                                <p>14</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-1">Trello Requests</td>
+                            <td class="col_2">
+                                <p>2</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-1">Marked Comments</td>
+                            <td class="col_2">
+                                <p>1</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
